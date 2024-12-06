@@ -1,0 +1,22 @@
+# Specific files
+secret.txt
+config.json
+RAGenv_streamlit
+.env
+.env.local
+.env.*
+*.env
+
+# File patterns
+*.log
+*.tmp
+
+# Directories
+node_modules/
+dist/
+build/
+.cache/
+
+# IDE/OS files
+.vscode/
+.DS_Store
