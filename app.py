@@ -1,3 +1,57 @@
+# app.py
+
+"""
+El-Fahman Bot - A Streamlit-based CV Analysis and Interview Assistant Application
+
+This application provides a user interface for uploading, processing, and analyzing CVs using
+AI-powered tools. It features multiple pages for different functionalities including CV upload,
+processing, chatbot interaction, and CV exploration.
+
+The application uses:
+- Streamlit for the web interface
+- Custom embedding models for CV processing
+- AI-powered chatbot for CV analysis and interview assistance
+- Qdrant vector database for storing and retrieving CV information
+
+Main Components:
+- Upload Page: For CV file uploads and preview
+- Process Page: For creating embeddings and analyzing CVs
+- Chat Page: For AI-powered interview assistance
+- Explorer Page: For comprehensive CV exploration
+
+Session State Variables:
+    temp_pdf_paths (list): Stores paths of temporarily uploaded PDFs
+    chatbot_manager (ChatbotManager): Instance of the chatbot manager
+    messages (list): Stores chat history for the interview assistant
+    selected_candidates (list): Stores information about selected candidates
+    processing_status (int): Tracks the status of CV processing
+    current_page (str): Tracks the current active page
+    explorer_messages (list): Stores chat history for the CV explorer
+
+The application is organized into four main sections:
+
+1. Upload Page (current_page == 'upload'):
+   - Handles CV file uploads
+   - Provides PDF preview functionality
+   - Allows multiple file selection
+
+2. Process Page (current_page == 'process'):
+   - Creates embeddings from uploaded CVs
+   - Manages vector database operations
+   - Handles candidate selection based on job requirements
+
+3. Chat Page (current_page == 'chat'):
+   - Provides interview assistance
+   - Maintains chat history
+   - Offers suggested questions
+
+4. Explorer Page (current_page == 'explorer'):
+   - Enables comprehensive CV exploration
+   - Provides statistical insights
+   - Allows general queries about all CVs
+
+Each section is conditionally rendered based on the current_page session state.
+"""
 import streamlit as st
 import time
 import base64
@@ -34,6 +88,18 @@ st.markdown("""
 
 # Function to display PDF
 def display_pdf(file):
+    """
+    Convert and display a PDF file in the Streamlit interface.
+
+    Args:
+        file: A file object containing the PDF to display
+
+    Returns:
+        None
+
+    Note:
+        Displays the PDF using an HTML iframe with base64 encoding
+    """
     base64_pdf = base64.b64encode(file.read()).decode('utf-8')
     pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="100%" height="500" type="application/pdf"></iframe>'
     st.markdown(pdf_display, unsafe_allow_html=True)
