@@ -34,6 +34,65 @@ A powerful AI-powered application for CV analysis and interview assistance, feat
   - `chatbot.py`: Manages AI conversation and analysis
   - `app.py`: Streamlit interface and application logic
 
+
+## 📖 Detailed Usage Guide
+
+### 1. CV Upload Page 📤
+
+#### Features
+- **Supported Formats**: PDF files only
+- **Multiple Upload**: Upload multiple CVs simultaneously
+- **Preview Feature**: Select and preview individual CVs in-app
+
+#### Best Practices
+- Use clear, readable PDF files
+- Ensure PDFs are not password protected
+- Keep file sizes under 10MB per file
+- Use consistent CV naming conventions
+
+### 2. Processing & Analysis ⚙️
+
+#### Creating Embeddings
+1. Navigate to the Processing page
+2. Click "Create CV Embeddings" button
+3. Wait for processing completion
+4. Monitor progress through the visual progress bar
+
+#### Candidate Selection
+1. Enter detailed job requirements in the text area
+2. Specify desired number of candidates to retrieve
+3. Review AI-selected candidates based on requirements
+4. Click "Proceed to Interview Assistant" when ready
+
+### 3. Interview Assistant 💬
+
+#### Starting a Conversation
+- Choose from suggested questions or type custom queries
+- Focus questions on specific candidates or make comparisons
+- Get AI-powered insights and analysis
+
+#### Best Practices
+- Ask specific, clear questions
+- Use follow-up questions for deeper insights
+- Save important conversation points
+- Structure questions around key requirements
+
+### 4. CV Explorer 🔍
+
+#### Search Capabilities
+- Perform full-text search across all uploaded CVs
+- Filter candidates by:
+  - Skills
+  - Experience level
+  - Educational background
+- Compare multiple candidates simultaneously
+
+#### Analytics Features
+- View comprehensive candidate statistics
+- Generate detailed comparative reports
+- Export insights for external use
+- Track key metrics across all candidates
+
 ## 💻 Installation
 
 ### Prerequisites
@@ -86,3 +145,4 @@ A powerful AI-powered application for CV analysis and interview assistance, feat
     ```bash
     streamlit run app.py
     ```
+
